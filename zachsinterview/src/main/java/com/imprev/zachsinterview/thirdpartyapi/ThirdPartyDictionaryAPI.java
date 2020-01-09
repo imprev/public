@@ -10,7 +10,7 @@ import java.util.List;
  * it is only here for reference on how this API operates.
  *
  */
-public interface ThirdPartyAPI {
+public interface ThirdPartyDictionaryAPI {
     
     /**
      * Should be called before making any other call to the API to ensure credentials are valid, otherwise an
@@ -29,7 +29,7 @@ public interface ThirdPartyAPI {
     void delete(String key) throws IOException, TryAgainLaterException, InvalidCredentialsException;
     
     /**
-     * Get all values for a given key
+     * Get all values for a given key, or an empty list if none are present
      */
     List<String> get(String key) throws IOException, TryAgainLaterException, InvalidCredentialsException;
     

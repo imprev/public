@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class NumericalKeyValueFunImpl implements NumericalKeyValueFun {
+public class NumberStoreAdditionalOperationsImpl implements NumberStoreAdditionalOperations {
     
-    private NumericalKeyValueStore keyValueStore;
+    private NumberStore numberStore;
     
-    public NumericalKeyValueFunImpl(NumericalKeyValueStore keyValueStore) {
-        this.keyValueStore = keyValueStore;
+    public NumberStoreAdditionalOperationsImpl(NumberStore numberStore) {
+        this.numberStore = numberStore;
     }
 
     @Override
@@ -17,15 +17,15 @@ public class NumericalKeyValueFunImpl implements NumericalKeyValueFun {
         
         int sum = 0;
         try {
-            Iterator<String> iter = this.keyValueStore.getKeysByPrefix(prefix);
+            Iterator<String> iter = this.numberStore.getKeysByPrefix(prefix);
             List<String> allKeys = new ArrayList<String>();
             iter.forEachRemaining(allKeys::add);
             
             for (String key : allKeys) {
-                sum += this.keyValueStore.get(key);
+                sum += this.numberStore.get(key);
             }
             
-        } catch (NumericalKeyValueException e) {
+        } catch (NumberStoreException e) {
             e.printStackTrace();
         }
         

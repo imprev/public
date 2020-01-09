@@ -10,9 +10,9 @@ import java.util.List;
  * the interface should provide sufficient information as to how this operates.
  *
  */
-public class ThirdPartyAPIImpl implements ThirdPartyAPI {
+public class ThirdPartyDictionaryAPIImpl implements ThirdPartyDictionaryAPI {
 
-    public ThirdPartyAPIImpl(String username, String secretPassword, String host, int port) {
+    public ThirdPartyDictionaryAPIImpl(String username, String secretPassword, String host, int port) {
         // hidden
     }
 
